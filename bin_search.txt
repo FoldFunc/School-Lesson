@@ -1,0 +1,39 @@
+Funkcja binary_search przyjmuje dwa argumenty:
+
+    element_do_znalezienia — element, którego indeks ma zostać 
+    znaleziony w podanej liście.
+
+    lista_do_przeszukania — lista, w której funkcja ma szukać elementu podanego
+    jako pierwszy argument.
+
+Funkcja działa w następujący sposób:
+
+    Inicjalizuje dwie zmienne:
+
+        low = 0 — reprezentuje początkowy indeks listy.
+
+        high = len(lista_do_przeszukania) - 1 — reprezentuje ostatni indeks listy.
+        Jest to długość listy minus 1, ponieważ indeksowanie w Pythonie zaczyna się od zera.
+
+    Dopóki low jest mniejsze lub równe high:
+
+        Zmienna mid = (low + high) // 2 oblicza indeks środkowego elementu listy.
+
+        Zmienna wartosc_srodek przypisuje wartość
+        elementu znajdującego się w środkowym indeksie.
+
+    Jeśli wartość środkowego elementu
+    (wartosc_srodek) jest większa niż element_do_znalezienia,
+    oznacza to, że poszukiwany element znajduje się w lewej połowie listy,
+    więc zmieniamy wartość high = mid - 1, by ograniczyć zakres poszukiwań do lewej połowy.
+
+    Jeśli wartość środkowego elementu
+    jest mniejsza niż element_do_znalezienia,
+    oznacza to, że poszukiwany element znajduje się w prawej połowie listy,
+    więc zmieniamy wartość low = mid + 1, by ograniczyć zakres poszukiwań do prawej połowy.
+
+    Jeśli wartość środkowego elementu
+    jest równa szukanemu elementowi, zwracamy jego indeks mid.
+
+    Jeśli pętla kończy się (czyli nie znaleziono elementu),
+    funkcja zwraca -1, co oznacza, że element nie został znaleziony w liście.
